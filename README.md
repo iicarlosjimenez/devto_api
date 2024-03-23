@@ -1,6 +1,6 @@
 ## Clonar Proyecto
 
-> <code><comando>git</comando> <accion>clone</accion> </code>
+> <code><comando>git</comando> <accion>clone</accion> git@github.com:iicarlosjimenez/devto_api.git</code>
 
 ## Instalar bibliotecas nuevas (solo de ser necesario)
 

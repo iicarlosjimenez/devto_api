@@ -29,6 +29,7 @@ class ArticuloController extends Controller
 
     public function store(Request $request) {
         $validate = Validator::make($request->all(), [
+            'user_id' => 'required',
             'title' => 'required',
             'content' => 'required'
         ]);
