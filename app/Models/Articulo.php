@@ -17,8 +17,12 @@ class Articulo extends Model
         'content',
         'comments_count',
         'reactions_count',
-        'reading_time_minutes',
-        'created_at'
+        'reading_time_minutes'
+    ];
+
+    protected $hidden = [
+        'updated_at',
+        'deleted_at'
     ];
 
     public function user() {

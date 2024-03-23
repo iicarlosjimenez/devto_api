@@ -58,7 +58,9 @@ class ArticuloController extends Controller
         if (!$articulo) {
             return response()->json(['message' => 'Artículo no encontrado'], 404);
         }
-        $articulo->update($request->all());
+        $articulo->title = $request->title;
+        $articulo->content = $request->content;
+        $articulo->save();
 
         return response()->json($articulo);
     }
