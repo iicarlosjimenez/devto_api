@@ -36,6 +36,8 @@ class ArticuloController extends Controller
         if ($validate->fails()) {
             return response()->json($validate->errors());
         }
+        if (!User::find($request->user_id))
+            return response()->json(['message' => 'Usuario no encontrado'], 404);
 
         $faker = new Faker();
         $users = User::get()->pluck('id')->toArray();
