@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticuloController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,7 @@ Route::get('/', function () {
         'status' => true
     ]);
 });
+Route::get('/users', [UserController::class, 'index']);
 Route::get('/articulos/{filters?}', [ArticuloController::class, 'index']);
 Route::post('/articulos', [ArticuloController::class, 'store']);
 Route::put('/articulos/{id}', [ArticuloController::class, 'update']);
