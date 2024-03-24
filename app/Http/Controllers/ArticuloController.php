@@ -23,7 +23,7 @@ class ArticuloController extends Controller
             return response()->json($articulos);
         }
 
-        $articulos = Articulo::with('user')->get();
+        $articulos = Articulo::with('user')->orderBy('created_at', 'DESC')->get();
         return response()->json($articulos);
     }
 
