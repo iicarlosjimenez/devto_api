@@ -19,7 +19,7 @@ class ArticuloController extends Controller
         if ($request->has('fecha')) {
             $fecha = Carbon::parse($request->input('fecha'))->toDateString();
         
-            $articulos = Articulo::with('user')->whereDate('created_at', $fecha)->get();
+            $articulos = Articulo::with('user')->whereDate('created_at', $fecha)->orderBy('created_at', 'DESC')->get();
             return response()->json($articulos);
         }
 
